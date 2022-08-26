@@ -1,0 +1,16 @@
+datos:
+   twitter:
+      arquitectojava
+   web:
+      arquitecturajava.com
+management:
+   endpoints:
+      enabled-by-default:
+         true
+      web:
+         exposure:
+            include:
+               "*"
+           
+                   
+                   

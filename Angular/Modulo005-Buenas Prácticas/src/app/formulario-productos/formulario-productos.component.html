@@ -1,0 +1,20 @@
+
+<form novalidate (ngSubmit)="miform.form.valid && insertar(productoNuevo)"  #miform="ngForm" >
+    <p>
+        <input type="text" [(ngModel)]="productoNuevo.id" name="id" required  #id="ngModel"/>
+    </p>
+    <span *ngIf="id.errors?.required" class="error">el campo id es obligatorio</span>
+
+    <p>
+        <input type="text" [(ngModel)]="productoNuevo.concepto" name="concepto" />
+    </p>
+    <p>
+        <input type="text" [(ngModel)]="productoNuevo.importe" name="importe" />
+    </p>
+    <p>
+        <input type="submit" value="insertar" />
+    </p>
+
+
+</form>
+

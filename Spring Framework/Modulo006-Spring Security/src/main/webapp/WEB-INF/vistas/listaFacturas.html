@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<table>
+<tr th:each="factura:${listaFacturas}">
+<td th:text="${factura.numero}"></td>
+<td th:text="${factura.concepto}"></td>
+<td th:text="${factura.importe}"></td>
+<td sec:authorize="hasRole('administrador')"><a  th:href="@{borrarFactura(numero=${factura.numero})}">Borrar</a></td>
+<td sec:authorize="hasAnyRole('administrador','avanzado','basico')" ><a  th:href="@{formularioEditarFactura(numero=${factura.numero})}">Editar</a></td>
+</tr>
+</table>
+<form action="formularioNuevaFactura">
+<input type="submit" value="aceptar"/>
+</form>
+</body>
+</html>

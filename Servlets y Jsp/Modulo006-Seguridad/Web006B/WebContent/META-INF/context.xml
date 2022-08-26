@@ -1,0 +1,17 @@
+<Context swallowOutput="true">
+
+
+	<Resource name="BeanManager" auth="Container"
+		type="javax.enterprise.inject.spi.BeanManager" factory="org.jboss.weld.resources.ManagerObjectFactory" />
+
+
+	<Resource name="jdbc/cursoWeb" type="javax.sql.DataSource"
+		maxActive="100" maxIdle="30" maxWait="10000" url="jdbc:mysql://localhost:3306/web"
+		driverClassName="com.mysql.jdbc.Driver" username="root" password="" />
+
+	<Realm className="org.apache.catalina.realm.DataSourceRealm"
+		localDataSource="true" dataSourceName="jdbc/cursoWeb" userTable="usuarios"
+		userNameCol="usuario_nombre" userCredCol="usuario_clave"
+		userRoleTable="usuarios_roles" roleNameCol="role_nombre" />
+	
+</Context>

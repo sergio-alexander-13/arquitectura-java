@@ -1,0 +1,41 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- esto configura la factoria de Spring para construir un objeto factura1 
+		que pertenezca a la clase FacturaConIVA -->
+
+	<bean id="juan" class="com.arquitecturajava.Persona">
+		<property name="nombre" value="juan" />
+		<property name="factura" ref="factura1" />
+	</bean>
+	<bean id="factura1" class="com.arquitecturajava.FacturaConIVA">
+		<property name="numero" value="1"></property>
+		<property name="concepto" value="ordenador"></property>
+		<property name="importe" value="300"></property>
+		<property name="lineas">
+			<list>
+				<ref bean="linea1"/>
+				<ref bean="linea2"/>
+				
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="linea1" class="com.arquitecturajava.LineaFactura">
+		<property name="numero" value="1"></property>
+		<property name="concepto" value="tablet"></property>
+		<property name="importe" value="300"></property>
+	</bean>
+		<bean id="linea2" class="com.arquitecturajava.LineaFactura">
+		<property name="numero" value="2"></property>
+		<property name="concepto" value="movil"></property>
+		<property name="importe" value="500"></property>
+	</bean>
+	
+	
+
+
+</beans>

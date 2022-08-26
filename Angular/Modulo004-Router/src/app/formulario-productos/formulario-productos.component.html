@@ -1,0 +1,18 @@
+<form>
+    <p>
+        <input type="text" [(ngModel)]="productoNuevo.id" name="id" />
+    </p>
+    <p>
+        <input type="text" [(ngModel)]="productoNuevo.concepto" name="concepto" />
+    </p>
+    <p>
+        <input type="text" [(ngModel)]="productoNuevo.importe" name="importe" />
+    </p>
+    <p>
+        <input type="button" value="insertar" (click)="insertar(productoNuevo)" />
+    </p>
+
+
+
+</form>
+
